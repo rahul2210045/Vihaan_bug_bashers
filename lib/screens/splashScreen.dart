@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vihaan_hack/components/coustom_button.dart';
 import 'package:vihaan_hack/components/splash_slider.dart';
 import 'package:vihaan_hack/constants/constant.dart';
+import 'package:vihaan_hack/login.dart';
 // import 'package:uig/components/custom_button.dart';
 // import 'package:uig/components/splash_slider.dart';
 // import 'package:uig/constants/constants.dart';
@@ -78,11 +79,11 @@ class SplashScreen extends StatelessWidget {
                   color: Colors.white,
                   textColor: primaryColor,
                   function: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //       builder: (context) => const LoginScreen(),
-                    //     ));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreens(),
+                        ));
                   },
                 ),
               ],
