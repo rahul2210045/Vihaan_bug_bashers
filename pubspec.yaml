@@ -59,8 +59,37 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+
+    - assest/png_logo.png
+    # - assest/png_logo.png
+    # - assest/pinpan_head.png
+    - assest/pinpan_walk.png
+    - assest/pinpan.png
+    - assest/worried_pinpan.png
+    - assest/pinpan_thinhead.png
+    - assest/ladypic.jpg
+    # - assest/Doc1.jpeg
+    # - assest/Doc2.jpeg
+    - assest/Doc3.jpeg
+    - assest/Doc4.jpeg
+    - assest/Doc5.jpeg
+    - assest/test.jpg
+    - assest/Happy.png
+    - assest/Relax.png
+    - assest/Calm.png
+    - assest/Focus.png
+    # - assest/Group 79.png
+    - assest/Group 77.png
+    - assest/Group 76.png
+    # - assest/Group 81@2x.png
+    - assest/Ellipse 2.png
+    - assest/caress.jpeg
+    - assest/brain4.png
+    - assest/Vector.png
+    - assest/briefcase 1.png
+    - assest/comment 1.png
+    - assest/Vector (1).png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
