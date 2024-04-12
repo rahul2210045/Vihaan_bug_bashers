@@ -1,10 +1,9 @@
-// import 'package:caress/HomeScreen.dart';
-// import 'package:caress/Instruction.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:email_validator/email_validator.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:convert';
 import 'package:flutter/material.dart';
-// import 'package:vihaan/homescreen.dart';
+import 'package:vihaan_hack/Homescreen.dart';
+import 'package:vihaan_hack/main.dart';
+import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -17,12 +16,99 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   // final _auth = FirebaseAuth.instance;
+  bool _isLoading = false;
+  TextEditingController name = TextEditingController();
+  TextEditingController age = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+  TextEditingController friendName = TextEditingController();
+  TextEditingController friendContact = TextEditingController();
+  TextEditingController friendEmail = TextEditingController();
+  TextEditingController specialist = TextEditingController();
+  TextEditingController specialistContact = TextEditingController();
 
   // final db = FirebaseFirestore.instance;
 
   void initState() {
     super.initState();
     // getCurrentUser();
+  }
+
+  // .................aoi intigration to post data..............................
+
+  Future<void> _markAttendance() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    final url =
+        Uri.https('vihaan-bugbashers.onrender.com', '/v1/user/register');
+    int ageInt = int.tryParse(age.text) ?? 0;
+    final Map<String, dynamic> requestBody = {
+      'name': '${name.text}',
+      'email': '${email.text}',
+      'password': '${password.text}',
+      'age': ageInt,
+      'wellWisherName': '${friendName.text}',
+      'wellWisherEmail': '${friendEmail.text}',
+      'specialistName': '${specialist.text}',
+      'specialistEmail': '${specialistContact.text}'
+    };
+    print('qrResult${name}');
+
+    try {
+      final response = await http.post(
+        url,
+        headers: <String, String>{
+          'Content-Type': 'application/json',
+          // 'Authorization': '${PreferencesManager().token}'
+        },
+        body: jsonEncode(requestBody),
+      );
+
+      print(response.statusCode);
+      if (response.statusCode == 200) {
+        print('Response body: ${response.body}');
+        final Map<String, dynamic> responseData = json.decode(response.body);
+        final message = responseData['message'];
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Successfully : $message'),
+            duration: const Duration(seconds: 3),
+          ),
+        );
+
+        setState(() {
+          _isLoading = false;
+        });
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (_) => Homescreen()));
+      } else {
+        final Map<String, dynamic> responseData = json.decode(response.body);
+        final message = responseData['message'];
+        print('Failed: $message');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.red.shade400,
+            content: Text(message),
+            duration: const Duration(seconds: 3),
+          ),
+        );
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      print('Error: $e');
+      setState(() {
+        _isLoading = false;
+      });
+    }
+    // if (isChecked) {
+    //   final prefs = await SharedPreferences.getInstance();
+    //   prefs.setString('username', _usernameController.text);
+    //   prefs.setString('password', _passController.text);
+    // }
   }
 
   //using this function you can use the credentials of the user
@@ -37,25 +123,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   //   }
   // }
 
-  TextEditingController name = TextEditingController();
-  TextEditingController age = TextEditingController();
-  TextEditingController friendName = TextEditingController();
-  TextEditingController friendContact = TextEditingController();
-  TextEditingController friendPhone = TextEditingController();
-  TextEditingController specialist = TextEditingController();
-  TextEditingController specialistContact = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(237,254,231,1),
+      backgroundColor: Color.fromRGBO(237, 254, 231, 1),
       appBar: AppBar(
         title: Text('Fill Your Basic Information'),
         centerTitle: true,
-      backgroundColor: Color.fromRGBO(237,254,231,1),
+        backgroundColor: Color.fromRGBO(237, 254, 231, 1),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -87,6 +165,22 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               TextFieldComponent(
                 width: width,
+                controller: email,
+                hintText: "Enter your email",
+                FieldName: "Email",
+                type: TextInputType.text,
+                necessaryField: true,
+              ),
+              TextFieldComponent(
+                width: width,
+                controller: password,
+                hintText: "Enter your Password",
+                FieldName: "Password",
+                type: TextInputType.text,
+                necessaryField: true,
+              ),
+              TextFieldComponent(
+                width: width,
                 controller: friendName,
                 hintText: "Enter your well wisher's name",
                 FieldName: "Well Wisher's Name",
@@ -98,17 +192,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 controller: friendContact,
                 hintText: "Enter your Well wisher's Email",
                 FieldName: "Email",
-                type: TextInputType.emailAddress,
+                type: TextInputType.text,
                 necessaryField: true,
               ),
-              TextFieldComponent(
-                width: width,
-                controller: friendPhone,
-                hintText: "Enter your Well wisher's Contact No",
-                FieldName: "Phone",
-                type: TextInputType.phone,
-                necessaryField: true,
-              ),
+              // TextFieldComponent(
+              //   width: width,
+              //   controller: friendEmail,
+              //   hintText: "Enter your Well wisher's Email",
+              //   FieldName: " Well Widher\'s Email",
+              //   type: TextInputType.phone,
+              //   necessaryField: true,
+              // ),
               SizedBox(height: height / 20),
               Text(
                 'If you have any history of mental/health related diagonasis,\nPlease fill the following',
@@ -128,7 +222,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 controller: specialistContact,
                 hintText: "Enter email of specialist/pyschologist",
                 FieldName: "Email of specialist",
-                type: TextInputType.emailAddress,
+                type: TextInputType.text,
                 necessaryField: false,
               ),
               SizedBox(height: 20),
@@ -164,7 +258,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       color: Colors.redAccent.withOpacity(0.8),
                       borderRadius: BorderRadius.all(Radius.circular(15.0))),
                   child: MaterialButton(
-                    color: Color.fromRGBO(84,205,126,1),
+                      color: Color.fromRGBO(84, 205, 126, 1),
                       elevation: 10.00,
                       minWidth: width / 1.2,
                       height: height / 11.5,
@@ -226,9 +320,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       //             builder: (context) => Homescreen()));
                       //   }
                       // },
-                      onPressed: () { 
+                      onPressed: () {
+                        _markAttendance();
                         // Navigator.push(context, MaterialPageRoute(builder: (context)=> Homescreen()));
-                         },
+                      },
                       child: Text(
                         'Submit',
                         style: TextStyle(color: Colors.white, fontSize: 20.00),

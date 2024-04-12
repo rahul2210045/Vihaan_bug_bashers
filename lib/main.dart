@@ -2,13 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vihaan_hack/login.dart';
 import 'package:vihaan_hack/profile.dart';
 import 'package:vihaan_hack/screens/age.dart';
 import 'package:vihaan_hack/screens/book_now.dart';
 import 'package:vihaan_hack/screens/congratulation.dart';
 import 'package:vihaan_hack/screens/gender.dart';
+import 'package:vihaan_hack/screens/prediction.dart';
 import 'package:vihaan_hack/screens/profile.dart';
 import 'package:vihaan_hack/screens/splashScreen.dart';
+import 'package:vihaan_hack/welcomescreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +30,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'Profile',
+      initialRoute: 'predic',
+
       // initialRoute: 'subject_wise_attendance',
       routes: {
         'splashscreen': (context) => SplashScreen(),
@@ -36,6 +40,9 @@ class MyApp extends StatelessWidget {
         'gender': (context) => gender(),
         'age': (context) => Age(),
         'Profile': (context) => profile1(),
+        'Welcome': (context) => WelcomeScreen(),
+        'login': (context) => LoginScreens(),
+        'predic': (context) => Prediction(),
       },
     );
   }
