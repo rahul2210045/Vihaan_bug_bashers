@@ -16,7 +16,7 @@ class _HelplineState extends State<Helpline> {
       appBar: AppBar(
         title: Text('Helpline'),
         centerTitle: true,
-        backgroundColor: Colors.redAccent.withOpacity(0.8),
+        backgroundColor: Color.fromARGB(255, 206, 255, 223),
       ),
       body: Container(
         padding: EdgeInsets.all(15),

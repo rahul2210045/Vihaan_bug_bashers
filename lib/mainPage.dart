@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vihaan_hack/Community.dart';
+import 'package:vihaan_hack/article.dart';
 import 'package:vihaan_hack/screens/assesment.dart';
 import 'package:vihaan_hack/screens/helpline.dart';
 import 'package:vihaan_hack/screens/instruction.dart';
@@ -66,7 +67,7 @@ Row(
 
 [
   InkWell(child: Image.asset('assest/Group 77.png',scale: 2,),onTap:(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=> comm()));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> Articles()));
   },),
   InkWell(child: Image.asset('assest/Group 76.png',scale: 2,),onTap:(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=> comm()));

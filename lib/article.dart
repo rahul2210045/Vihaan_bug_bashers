@@ -57,10 +57,18 @@ class _ArticlesState extends State<Articles> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 238, 255, 244),
       appBar: AppBar(
         title: Text('Articles'),
         centerTitle: true,
-        backgroundColor: Colors.redAccent.withOpacity(0.8),
+        backgroundColor: Color.fromARGB(255, 206, 255, 223),
+        leading: IconButton(
+    icon: Icon(Icons.arrow_back),
+    onPressed: () {
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=> Homescreen1()));
+      // Implement navigation logic here
+    },
+  ),
       ),
       body: Container(
         padding: EdgeInsets.all(15.00),

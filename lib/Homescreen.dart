@@ -6,16 +6,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-// import 'package:vihaan/article.dart';
-// import 'package:vihaan/community.dart';
-// import 'package:vihaan/homescreen1.dart';
-// import 'package:vihaan/profilepage.dart';
 import 'package:vihaan_hack/Community.dart';
-import 'package:vihaan_hack/article.dart';
 import 'package:vihaan_hack/profile.dart';
 import 'package:vihaan_hack/screens/assesment.dart';
 import 'package:vihaan_hack/screens/helpline.dart';
 import 'package:vihaan_hack/screens/instruction.dart';
+import 'package:vihaan_hack/screens/videocall.dart';
 
 import 'mainPage.dart';
 
@@ -31,7 +27,7 @@ class _HomescreenState extends State<Homescreen> {
       PersistentTabController(initialIndex: 0);
 
   List<Widget> _buildScreens() {
-    return [Homescreen1(),comm(),Articles(),Profile()];
+    return [Homescreen1(),videocall(),comm(),Profile()];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
@@ -93,7 +89,7 @@ class _HomescreenState extends State<Homescreen> {
       screens: _buildScreens(),
       items: _navBarsItems(),
       confineInSafeArea: true,
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 251, 255, 252),
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true, // Default is true.
