@@ -1,21 +1,12 @@
-// import 'package:caress/ArticlesPage.dart';
-// import 'package:caress/ProfilePage.dart';
-// import 'package:caress/UserScreen.dart';
-// import 'package:caress/main.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-// import 'package:vihaan/article.dart';
-// import 'package:vihaan/community.dart';
-// import 'package:vihaan/homescreen1.dart';
-// import 'package:vihaan/profilepage.dart';
 import 'package:vihaan_hack/Community.dart';
 import 'package:vihaan_hack/article.dart';
 import 'package:vihaan_hack/profile.dart';
 
 import 'mainPage.dart';
 
-// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class Homescreen extends StatefulWidget {
   @override

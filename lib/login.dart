@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:vihaan_hack/Homescreen.dart';
 // import 'package:vihaan/welcomescreen.dart';
 import 'package:vihaan_hack/welcomescreen.dart';
 
@@ -24,11 +24,11 @@ class _LoginScreenState extends State<LoginScreens> {
     var width = screenSize.width;
     var height = screenSize.height;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(237,254,231,1),
+        backgroundColor: Color.fromRGBO(237, 254, 231, 1),
         appBar: AppBar(
           title: Text('Caress'),
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(237,254,231,1),
+          backgroundColor: Color.fromRGBO(237, 254, 231, 1),
         ),
         body: Container(
           padding: EdgeInsets.all(width / 20),
@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreens> {
                         elevation: 10.00,
                         minWidth: width / 1.2,
                         height: height / 11.5,
-                        
+
                         // onPressed: () async {
                         //   setState(() {
                         //     // patientInfo.email = email;
@@ -154,8 +154,11 @@ class _LoginScreenState extends State<LoginScreens> {
                         //   }
                         // },
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomeScreen()));
-                         },
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => WelcomeScreen()));
+                        },
                         child: Text(
                           'Login',
                           style:
@@ -176,10 +179,10 @@ class _LoginScreenState extends State<LoginScreens> {
                     ),
                     TextButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => ()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Homescreen()));
                         },
                         child: Text(
                           'Sign Up',
