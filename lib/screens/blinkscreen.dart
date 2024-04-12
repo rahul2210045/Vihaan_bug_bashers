@@ -25,8 +25,10 @@ class _BlinkScreenState extends State<BlinkScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Add your splash screen image or logo here
-            Image.asset('assets/images/plantopia.jpeg'),
+            Image.asset('assest/image_7-removebg-preview.png'),
             SizedBox(height: 20),
+            Text('MitrSerenity',style: TextStyle(color: Color.fromARGB(255, 0, 0, 0),fontWeight: FontWeight.w600,fontSize: 20),)
+
           ],
         ),
       ),
@@ -36,7 +38,7 @@ class _BlinkScreenState extends State<BlinkScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(seconds: 5), () {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(

@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vihaan_hack/Community.dart';
 import 'package:vihaan_hack/article.dart';
 import 'package:vihaan_hack/screens/assesment.dart';
+import 'package:vihaan_hack/screens/chatbot.dart';
 import 'package:vihaan_hack/screens/helpline.dart';
 import 'package:vihaan_hack/screens/instruction.dart';
 
@@ -22,6 +23,18 @@ class _Homescreen1State extends State<Homescreen1> {
         backgroundColor: Color.fromRGBO(237, 254, 231, 1),
         title: Row(
           children: [CircleAvatar(backgroundColor: Colors.blueAccent,backgroundImage: AssetImage('assest/Ellipse 2.png'),),Spacer(),Icon(Icons.notifications)],
+        ),
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: FloatingActionButton(
+          onPressed: () async {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> MentalHealthChatBot()));
+          },
+          child: Icon(Icons.chat_bubble,color: Colors.green,),
+           backgroundColor: Color.fromRGBO(202, 246, 221, 1),
+        shape: CircleBorder(),
+        elevation: 2.0, // Set the button background color
         ),
       ),
       drawer: Menu(),
@@ -81,10 +94,32 @@ Container(child: Image.asset('assest/Group 81@2x.png'),),
           ),
         ),
       ),
+      //   floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // Add your desired action when the button is pressed
+      //   },
+      //   child: Icon(
+      //     Icons.edit,
+      //     color: Colors.white,
+      //   ),
+      //   backgroundColor: Color.fromRGBO(17, 136, 68, 1),
+      //   shape: CircleBorder(),
+      //   elevation: 2.0, // Set the button background color
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
     );
   }
 }
+// class _CustomFloatingActionButtonLocation extends FloatingActionButtonLocation {
+//   @override
+//   Offset getOffset(ScaffoldPrelayoutGeometry scaffoldGeometry) {
+//     // Adjust the vertical offset to position the button slightly above its default position
+//     return const Offset(340, 740);
+//   }
 
+//   @override
+//   String toString() => 'FloatingActionButtonLocation.custom';
+// }
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
 

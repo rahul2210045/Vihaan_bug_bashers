@@ -2,9 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vihaan_hack/profile.dart';
 import 'package:vihaan_hack/screens/age.dart';
+import 'package:vihaan_hack/screens/blinkscreen.dart';
 import 'package:vihaan_hack/screens/book_now.dart';
+import 'package:vihaan_hack/screens/chatbot.dart';
 import 'package:vihaan_hack/screens/congratulation.dart';
 import 'package:vihaan_hack/screens/gender.dart';
 import 'package:vihaan_hack/screens/profile.dart';
@@ -27,15 +28,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'Profile',
+      initialRoute: 'blinkscreen',
       // initialRoute: 'subject_wise_attendance',
       routes: {
         'splashscreen': (context) => SplashScreen(),
+         'blinkscreen': (context) => BlinkScreen(),
         'bookPage': (context) => const BookNow(),
         'congtrates': (context) => congt(),
         'gender': (context) => gender(),
         'age': (context) => Age(),
         'Profile': (context) => profile1(),
+        'chatbot': (context) => MentalHealthChatBot(),
       },
     );
   }
