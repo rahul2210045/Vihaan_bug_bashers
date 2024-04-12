@@ -42,6 +42,12 @@ dependencies:
   # google_fonts: ^6.2.1
   intro_slider: ^4.2.1
   shared_preferences: ^2.2.3
+  percent_indicator: ^4.2.3
+  # health: ^10.2.0
+  # flutter_local_notifications: ^17.0.0
+  # flutter_phone_direct_caller: ^2.1.1
+  font_awesome_flutter: ^10.7.0
+  # usage_stats: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -86,10 +92,10 @@ flutter:
     - assest/Relax.png
     - assest/Calm.png
     - assest/Focus.png
-    # - assest/Group 79.png
+    - assest/Group 79.png
     - assest/Group 77.png
     - assest/Group 76.png
-    # - assest/Group 81@2x.png
+    - assest/Group 81@2x.png
     - assest/Ellipse 2.png
     - assest/caress.jpeg
     - assest/brain4.png
