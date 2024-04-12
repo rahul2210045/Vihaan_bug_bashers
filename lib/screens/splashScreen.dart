@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vihaan_hack/Homescreen.dart';
 import 'package:vihaan_hack/components/coustom_button.dart';
 import 'package:vihaan_hack/components/splash_slider.dart';
 import 'package:vihaan_hack/constants/constant.dart';
 import 'package:vihaan_hack/login.dart';
+import 'package:vihaan_hack/welcomescreen.dart';
 // import 'package:uig/components/custom_button.dart';
 // import 'package:uig/components/splash_slider.dart';
 // import 'package:uig/constants/constants.dart';
@@ -37,11 +39,11 @@ class SplashScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => const LoginScreen(),
-                        //     ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>  Homescreen(),
+                            ));
                       },
                       child: SizedBox(
                         height: 60,
@@ -67,11 +69,11 @@ class SplashScreen extends StatelessWidget {
                   color: Colors.green.shade700,
                   textColor: Colors.white,
                   function: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //       builder: (context) => const CreateAccountScreen(),
-                    //     ));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const WelcomeScreen(),
+                        ));
                   },
                 ),
                 CustomButton(
@@ -82,7 +84,7 @@ class SplashScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LoginScreens(),
+                          builder: (context) => LoginScreens(),
                         ));
                   },
                 ),
