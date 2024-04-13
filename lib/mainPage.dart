@@ -3,8 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vihaan_hack/Community.dart';
 import 'package:vihaan_hack/article.dart';
 import 'package:vihaan_hack/screens/assesment.dart';
+import 'package:vihaan_hack/screens/book_now.dart';
+import 'package:vihaan_hack/screens/chatbot.dart';
 import 'package:vihaan_hack/screens/helpline.dart';
-import 'package:vihaan_hack/screens/instruction.dart';
+import 'package:vihaan_hack/screens/prediction.dart';
 
 class Homescreen1 extends StatefulWidget {
   const Homescreen1({super.key});
@@ -14,8 +16,19 @@ class Homescreen1 extends StatefulWidget {
 }
 
 class _Homescreen1State extends State<Homescreen1> {
+
+  double convertIntToHealth(int intValue) {
+  // Example conversion: Assuming 0 to 100 integer range corresponds to 0% to 100% health
+  // You can adjust this according to your needs
+  return (intValue / 100.0) * 100.0; // Assuming 100 is maximum health
+}
+
+
   @override
   Widget build(BuildContext context) {
+     int intValue = 75; // Example integer value representing health
+  double healthValue = convertIntToHealth(intValue);
+  print('Health value: $healthValue%');
     return Scaffold(
       backgroundColor: Color.fromRGBO(237, 254, 231, 1),
       appBar: AppBar(
@@ -24,6 +37,18 @@ class _Homescreen1State extends State<Homescreen1> {
           children: [CircleAvatar(backgroundColor: Colors.blueAccent,backgroundImage: AssetImage('assest/Ellipse 2.png'),),Spacer(),Icon(Icons.notifications)],
         ),
       ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(bottom: 10),
+      //   child: FloatingActionButton(
+      //     onPressed: () async {
+      //     Navigator.push(context, MaterialPageRoute(builder: (context)=> MentalHealthChatBot()));
+      //     },
+      //     child: Icon(Icons.chat_bubble,color: Colors.green,),
+      //      backgroundColor: Color.fromRGBO(202, 246, 221, 1),
+      //   shape: CircleBorder(),
+      //   elevation: 2.0, // Set the button background color
+      //   ),
+      // ),
       drawer: Menu(),
       body: SingleChildScrollView(
         child: Padding(
@@ -56,7 +81,7 @@ class _Homescreen1State extends State<Homescreen1> {
               ),
               SizedBox(height: 10,),
               InkWell(child: Image.asset('assest/Group 79.png'),onTap:(){
-
+   Navigator.push(context, MaterialPageRoute(builder: (context)=> BookNow()));
                 // asdfghjklkjhgfdsdfghjklkjhgfdfghjklkjhgfdsdfghjk
 
               } ,),
@@ -74,17 +99,52 @@ Row(
   },)
 ],),
 SizedBox(height: 10,),
-Container(child: Text("“It is better to conquer yourself than to win a thousand battles”",style: TextStyle(fontSize: 15, ),),),
+Container(child:
+ Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Row(
+      children: [
+        Text("“It is better to conquer yourself”",style: TextStyle(fontSize: 10, ),),
+      ],
+    ),
+    InkWell(child: Image.asset('assest/Girl waiting.png',),onTap: () => 
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> MentalHealthChatBot()))
+    ,),
+  ],
+),),
 SizedBox(height: 10,),
 Container(child: Image.asset('assest/Group 81@2x.png'),),
             ],
           ),
         ),
       ),
+      //   floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // Add your desired action when the button is pressed
+      //   },
+      //   child: Icon(
+      //     Icons.edit,
+      //     color: Colors.white,
+      //   ),
+      //   backgroundColor: Color.fromRGBO(17, 136, 68, 1),
+      //   shape: CircleBorder(),
+      //   elevation: 2.0, // Set the button background color
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
     );
   }
 }
+// class _CustomFloatingActionButtonLocation extends FloatingActionButtonLocation {
+//   @override
+//   Offset getOffset(ScaffoldPrelayoutGeometry scaffoldGeometry) {
+//     // Adjust the vertical offset to position the button slightly above its default position
+//     return const Offset(340, 740);
+//   }
 
+//   @override
+//   String toString() => 'FloatingActionButtonLocation.custom';
+// }
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
 
@@ -96,7 +156,7 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var height = size.height;
+    // var height = size.height;
     var width = size.width;
     Color color = Colors.black;
     return Drawer(
@@ -156,33 +216,33 @@ class _MenuState extends State<Menu> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 30,
-              ),
-              InkWell(
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.book_outlined,
-                      color: Colors.black,
-                      size: 25,
-                    ),
-                    SizedBox(width: 10),
-                    Text(
-                      'Instructions',
-                      textScaleFactor: 1,
-                      style: TextStyle(fontSize: 25, color: color),
-                    ),
-                  ],
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Instruction()));
-                      //        Navigator.push(context,
-                      // MaterialPageRoute(builder: (context) => WelcomeScreen()));
-                },
-              ),
+              // SizedBox(
+              //   height: 30,
+              // ),
+              // InkWell(
+              //   child: Row(
+              //     children: [
+              //       Icon(
+              //         Icons.book_outlined,
+              //         color: Colors.black,
+              //         size: 25,
+              //       ),
+              //       SizedBox(width: 10),
+              //       Text(
+              //         'Instructions',
+              //         textScaleFactor: 1,
+              //         style: TextStyle(fontSize: 25, color: color),
+              //       ),
+              //     ],
+              //   ),
+              //   onTap: () {
+              //     Navigator.pop(context);
+              //     Navigator.push(context,
+              //         MaterialPageRoute(builder: (context) => Instruction()));
+              //         //        Navigator.push(context,
+              //         // MaterialPageRoute(builder: (context) => WelcomeScreen()));
+              //   },
+              // ),
               SizedBox(
                 height: 30,
               ),
@@ -228,21 +288,16 @@ class _MenuState extends State<Menu> {
                   ],
                 ),
                 onTap: () {
+
                   Navigator.pop(context);
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) =>
-                  //             Prediction(HealthValue(), stepx!)));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              Prediction()));
                 },
               ),
-              SizedBox(height: height / 2),
-              Text(
-                'Copyright©2023 | @Ideavengers',
-                textAlign: TextAlign.center,
-                textScaleFactor: 1,
-                style: TextStyle(fontSize: 15, color: color),
-              ),
+       
             ],
           ),
         ),

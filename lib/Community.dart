@@ -25,9 +25,9 @@ class _commState extends State<comm> {
     // Coustomcol(),
     Column(
       children: [
-        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3),
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3)
+        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy', likesCount: 3),
+                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
+                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3)
 
 
         // createCard(
@@ -52,8 +52,8 @@ class _commState extends State<comm> {
     ),
     Column(
       children: [
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3),
+                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
+                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
 
 
         //  communityCard(), communityCard(), communityCard()
@@ -67,8 +67,8 @@ class _commState extends State<comm> {
     ),
     Column(
       children: [
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3),
+                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
+                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
 
 
         //  communityCard(), communityCard()
@@ -82,8 +82,8 @@ class _commState extends State<comm> {
     ),
     Column(
       children: [
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3)
+                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
+                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3)
 
 
         //  communityCard(), communityCard()
@@ -97,8 +97,8 @@ class _commState extends State<comm> {
     ),
     Column(
       children: [
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy which can cure', likesCount: 3)
+                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
+                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3)
 
 
         //  communityCard(), communityCard()
@@ -146,7 +146,7 @@ class _commState extends State<comm> {
           "Your Community",
           style: GoogleFonts.poppins(
             color: const Color.fromRGBO(91, 90, 90, 1),
-            fontSize: 30,
+            // fontSize: 30,
             // fontWeight: FontWeight.bold,
           ),
         ),
@@ -185,7 +185,7 @@ class _commState extends State<comm> {
                             child: AnimatedContainer(
                               duration: const Duration(milliseconds: 300),
                               margin: const EdgeInsets.all(5),
-                              width: 100,
+                              width: 150,
                               height: 55,
                               decoration: BoxDecoration(
                                 color: current == index

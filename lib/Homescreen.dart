@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:vihaan_hack/Community.dart';
-import 'package:vihaan_hack/profile.dart';
 import 'package:vihaan_hack/screens/assesment.dart';
 import 'package:vihaan_hack/screens/helpline.dart';
 import 'package:vihaan_hack/screens/instruction.dart';
+import 'package:vihaan_hack/screens/profile.dart';
 import 'package:vihaan_hack/screens/videocall.dart';
 
 import 'mainPage.dart';
@@ -22,7 +22,7 @@ class _HomescreenState extends State<Homescreen> {
       PersistentTabController(initialIndex: 0);
 
   List<Widget> _buildScreens() {
-    return [Homescreen1(),videocall(),comm(),Profile()];
+    return [Homescreen1(),videocall(),comm(),profile1()];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {

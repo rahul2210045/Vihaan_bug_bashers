@@ -6,14 +6,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vihaan_hack/Homescreen.dart';
 import 'package:vihaan_hack/constants/callInfo.dart';
 import 'package:vihaan_hack/login.dart';
-import 'package:vihaan_hack/mainPage.dart';
-import 'package:vihaan_hack/profile.dart';
 import 'package:vihaan_hack/screens/age.dart';
+import 'package:vihaan_hack/screens/blinkscreen.dart';
 import 'package:vihaan_hack/screens/book_now.dart';
-import 'package:vihaan_hack/screens/callPage.dart';
+import 'package:vihaan_hack/screens/chatbot.dart';
 import 'package:vihaan_hack/screens/congratulation.dart';
 import 'package:vihaan_hack/screens/gender.dart';
-import 'package:vihaan_hack/screens/homecall.dart';
+import 'package:vihaan_hack/screens/language.dart';
 import 'package:vihaan_hack/screens/prediction.dart';
 import 'package:vihaan_hack/screens/profile.dart';
 import 'package:vihaan_hack/screens/splashScreen.dart';
@@ -37,20 +36,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: 'splashscreen',
-
       // initialRoute: 'subject_wise_attendance',
       routes: {
         'splashscreen': (context) => SplashScreen(),
+         'blinkscreen': (context) => BlinkScreen(),
         'bookPage': (context) => const BookNow(),
         'congtrates': (context) => congt(),
         'gender': (context) => gender(),
         'age': (context) => Age(),
         'Profile': (context) => profile1(),
+        'chatbot': (context) => MentalHealthChatBot(),
         'Welcome': (context) => WelcomeScreen(),
         'login': (context) => LoginScreens(),
-        'home': (context) => Homescreen(),
-        // 'home1': (context) => callHome(),
-        // 'call': (context) => CallPage(callID: '${ClassInfo.appId}'),
+        'predic': (context) => Prediction(),
+         'language': (context) => Language(),
+        // 'userscreen': (context) => UserData(),
       },
     );
   }

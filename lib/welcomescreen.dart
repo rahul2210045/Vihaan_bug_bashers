@@ -1,9 +1,8 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:vihaan_hack/Homescreen.dart';
-import 'package:vihaan_hack/main.dart';
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
+import 'package:vihaan_hack/Homescreen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -383,13 +382,13 @@ class TextFieldComponent extends StatelessWidget {
               controller: controller,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.grey[100],
+                fillColor: const Color.fromARGB(255, 255, 255, 255),
                 hintText: hintText,
                 hintStyle: TextStyle(color: Colors.grey, fontSize: 15),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: BorderSide(
-                    color: Colors.blue,
+                    color: Color.fromARGB(255, 233, 255, 218),
                     width: 1.0,
                   ),
                 ),

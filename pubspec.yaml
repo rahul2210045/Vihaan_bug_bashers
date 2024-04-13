@@ -49,8 +49,12 @@ dependencies:
   # flutter_local_notifications: ^17.0.0
   # flutter_phone_direct_caller: ^2.1.1
   font_awesome_flutter: ^10.7.0
-  # zego_uikit_prebuilt_call: ^4.7.3
-  # zego_uikit_prebuilt_call: ^4.7.3
+  google_gemini: ^0.1.2
+  image_picker: ^1.0.8
+  flutter_local_notifications: ^17.0.0
+  # usage_stats: ^1.2.0
+  # flutter_phone_direct_caller: ^2.1.1
+  # flutter_local_notifications: ^17.0.0
   # health: ^10.2.0
   # usage_stats: ^1.2.0
 
@@ -110,6 +114,9 @@ flutter:
     - assest/Vector (1).png
     - assets/
     - assest/Group (1).png
+    - assest/image_7-removebg-preview.png
+    - assest/robo.gif
+    - assest/Girl waiting.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

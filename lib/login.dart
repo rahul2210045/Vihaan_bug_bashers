@@ -1,11 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:vihaan_hack/Homescreen.dart';
 import 'package:vihaan_hack/main.dart';
-import 'package:vihaan_hack/welcomescreen.dart';
-import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
 
 class LoginScreens extends StatefulWidget {
   const LoginScreens({Key? key}) : super(key: key);
@@ -160,7 +158,7 @@ class _LoginScreenState extends State<LoginScreens> {
             child: Column(
               children: <Widget>[
                 Image(
-                  image: AssetImage('assest/caress.jpeg'),
+                  image: AssetImage('assets/Screenshot 2024-04-12 130059.png'),
                   height: height / 4,
                   width: 0.75 * width,
                 ),
@@ -191,15 +189,16 @@ class _LoginScreenState extends State<LoginScreens> {
                     cursorColor: color,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.grey[100],
+                      fillColor: Color.fromARGB(255, 255, 255, 255),
                       prefixIcon: Icon(Icons.perm_identity, color: color),
                       hintText: 'Enter your Email',
                       enabledBorder: OutlineInputBorder(
+                        
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(color: color)),
+                          borderSide: BorderSide(color: Colors.green)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(width: 2, color: color)),
+                          borderSide: BorderSide(width: 2, color: Colors.red)),
                     ),
                   ),
                 ),
@@ -222,10 +221,10 @@ class _LoginScreenState extends State<LoginScreens> {
                       hintText: 'Enter your Password',
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(color: color)),
+                          borderSide: BorderSide(color: Colors.green)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(width: 2, color: color)),
+                          borderSide: BorderSide(width: 2, color: Colors.red)),
                     ),
                   ),
                 ),

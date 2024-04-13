@@ -1,15 +1,15 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vihaan_hack/article.dart';
 import 'package:vihaan_hack/login.dart';
 import 'package:vihaan_hack/main.dart';
 import 'package:vihaan_hack/screens/age.dart';
 import 'package:vihaan_hack/screens/book_now.dart';
 import 'package:vihaan_hack/screens/gender.dart';
+import 'package:vihaan_hack/screens/language.dart';
 import 'package:vihaan_hack/widget/coustem_text.dart';
 import 'package:vihaan_hack/widget/setting.dart';
-
 
 class profile1 extends StatefulWidget {
   const profile1({super.key});
@@ -39,7 +39,6 @@ class _profile1State extends State<profile1> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.clear();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -113,12 +112,12 @@ class _profile1State extends State<profile1> {
           settingBox(
               'assets/Vector (28).png', 'Personal Info', context, BookNow()),
           settingBox(
-              'assets/Vector (28).png', 'Resolved Cases', context, profile1()),
+              'assets/Vector (28).png', 'Progress Report', context, profile1()),
           settingBox(
               'assets/Vector (28).png', 'Active Cases', context, profile1()),
-          settingBox('assets/Vector (28).png', 'Language', context, gender()),
+          settingBox('assets/Vector (28).png', 'Language', context, Language()),
           settingBox(
-              'assets/Vector (28).png', 'Lawyers', context, Age()),
+              'assets/Vector (28).png', 'Latest articles', context, Articles()),
           Padding(
               padding: const EdgeInsets.all(12.0),
               child: GestureDetector(
