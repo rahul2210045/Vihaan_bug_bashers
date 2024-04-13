@@ -90,10 +90,10 @@ class _profile1State extends State<profile1> {
           ),
           Image.asset(
             'assets/Ellipse 2 (1).png',
-            scale: 4.5,
+            scale: 3,
             // height: screenHeight * 0.032,
           ),
-          SizedBox(height: screenHeight * 0.02),
+          SizedBox(height: screenHeight * 0.0),
           CustomText(
             // text: prefs.getString('name')?? 'User',
             text: PreferencesManager().name ?? 'User',

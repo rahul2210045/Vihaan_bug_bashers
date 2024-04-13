@@ -12,7 +12,6 @@ class comm extends StatefulWidget {
 }
 
 class _commState extends State<comm> {
-  /// List of Tab Bar Item
   List<String> items = [
     "Trending",
     "Relationship",
@@ -20,120 +19,120 @@ class _commState extends State<comm> {
     "Others",
   ];
 
-  /// List of body icon
   List<Column> cards = [
-    // Coustomcol(),
     Column(
       children: [
-        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy', likesCount: 3),
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3)
-
-
-        // createCard(
-        //   imagePath: 'assets/images/Rectangle 2.18.png',
-        //   title: 'David Aukltin, who breathed life into the Rose is dead at 92',
-        //   authorName: 'Vidhi kkkGupta',
-        //   date: '2024 . 01 . 01',
-        // ),
-        // createCard(
-        //   imagePath: 'assets/images/Rectangle 2.2.png',
-        //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-        //   authorName: 'Vidhi Gupta',
-        //   date: '2024 . 01 . 01',
-        // ),
-        // createCard(
-        //   imagePath: 'assets/images/Rectangle 2.2.png',
-        //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-        //   authorName: 'Vidhi Gupta',
-        //   date: '2024 . 01 . 01',
-        // ),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3)
       ],
     ),
     Column(
       children: [
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
-
-
-        //  communityCard(), communityCard(), communityCard()
-        // createCard(
-        //   imagePath: 'assets/images/Rectangle 2.2.png',
-        //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-        //   authorName: 'Vidhi Gupta',
-        //   date: '2024 . 01 . 01',
-        // ),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3)
       ],
     ),
     Column(
       children: [
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
-
-
-        //  communityCard(), communityCard()
-        // createCard(
-        //   imagePath: 'assets/images/Rectangle 2.18.png',
-        //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-        //   authorName: 'Vidhi Gupta',
-        //   date: '2024 . 01 . 01',
-        // ),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3)
       ],
     ),
     Column(
       children: [
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3)
-
-
-        //  communityCard(), communityCard()
-        // createCard(
-        //   imagePath: 'assets/images/Rectangle 2.18.png',
-        //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-        //   authorName: 'Vidhi Gupta',
-        //   date: '2024 . 01 . 01',
-        // ),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
       ],
     ),
     Column(
       children: [
-                CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3),
-                        CommunityCard(username:'   Coal Dingo' , timeAgo: 'just now', question: 'Is there a therapy ', likesCount: 3)
-
-
-        //  communityCard(), communityCard()
-        // createCard(
-        //   imagePath: 'assets/images/Rectangle 2.18.png',
-        //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-        //   authorName: 'Vidhi Gupta',
-        //   date: '2024 . 01 . 01',
-        // ),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
       ],
     ),
-    // createCard(
-    //   imagePath: 'assets/images/Rectangle 2.18.png',
-    //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-    //   authorName: 'Vidhi Gupta',
-    //   date: '2024 . 01 . 01',
-    // ),
-    // createCard(
-    //   imagePath: 'assets/images/Rectangle 2.18.png',
-    //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-    //   authorName: 'Vidhi Gupta',
-    //   date: '2024 . 01 . 01',
-    // ),
-    // createCard(
-    //   imagePath: 'assets/images/Rectangle 2.18.png',
-    //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-    //   authorName: 'Vidhi Gupta',
-    //   date: '2024 . 01 . 01',
-    // ),
-    // createCard(
-    //   imagePath: 'assets/images/Rectangle 2.18.png',
-    //   title: 'David Austin, who breathed life into the Rose is dead at 92',
-    //   authorName: 'Vidhi Gupta',
-    //   date: '2024 . 01 . 01',
-    // )
+    Column(
+      children: [
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3)
+      ],
+    ),
+    Column(
+      children: [
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3),
+        CommunityCard(
+            username: '   Coal Dingo',
+            timeAgo: 'just now',
+            question: 'Is there a therapy ',
+            likesCount: 3)
+      ],
+    ),
   ];
   int current = 0;
   PageController pageController = PageController();
@@ -146,8 +145,6 @@ class _commState extends State<comm> {
           "Your Community",
           style: GoogleFonts.poppins(
             color: const Color.fromRGBO(91, 90, 90, 1),
-            // fontSize: 30,
-            // fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
@@ -156,11 +153,9 @@ class _commState extends State<comm> {
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          // height: double.infinity,
           margin: const EdgeInsets.all(5),
           child: Column(
             children: [
-              /// Tab Bar
               SizedBox(
                 width: double.infinity,
                 height: 80,
