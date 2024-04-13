@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vihaan_hack/screens/book_now.dart';
 
 class CounselorCard extends StatelessWidget {
   // final String profileImagePath;
@@ -74,7 +75,9 @@ class CounselorCard extends StatelessWidget {
                   // scale: 4,
                 ),
                 TextButton(
-                  onPressed: () {  },
+                  onPressed: () { 
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> BookNow()));
+                   },
                   child: Text(
                     'Book Now',
                     style: TextStyle(

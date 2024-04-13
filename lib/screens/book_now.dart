@@ -93,10 +93,11 @@ class _BookNowState extends State<BookNow> {
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 132, 233, 136)),
                   onPressed: () {
                     _showConfirmationDialog(context);
                   },
-                  child: Text('Book Appointment'),
+                  child: Text('Book Appointment',style: TextStyle(color: Colors.black),),
                 ),
               ],
             ),

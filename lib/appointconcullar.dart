@@ -22,7 +22,7 @@ class _AppointState extends State<Appoint> {
           "Appoint a  Counsellor ",
           style: GoogleFonts.poppins(
             color: const Color.fromRGBO(91, 90, 90, 1),
-            fontSize: 30,
+            // fontSize: 30,
             // fontWeight: FontWeight.bold,
           ),
         ),
