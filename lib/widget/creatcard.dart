@@ -60,7 +60,7 @@ class _CommunityCardState extends State<CommunityCard> {
                           Text(
                             '   .  ${widget.timeAgo}',
                             style: TextStyle(
-                              fontSize: 16,
+                              // fontSize: 16,
                               fontWeight: FontWeight.normal,
                             ),
                           ),

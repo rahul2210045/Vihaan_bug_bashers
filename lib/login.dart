@@ -1,7 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:vihaan_hack/Homescreen.dart';
-// import 'package:vihaan/welcomescreen.dart';
-import 'package:vihaan_hack/welcomescreen.dart';
+import 'package:vihaan_hack/main.dart';
 
 class LoginScreens extends StatefulWidget {
   const LoginScreens({Key? key}) : super(key: key);
@@ -16,7 +18,126 @@ class _LoginScreenState extends State<LoginScreens> {
   late String email;
   late String password;
   Color color = Colors.black;
+  bool _isLoading = false;
   // late SharedPreferences sharedPreferences;
+
+  Future<void> _loginApi() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    final url = Uri.https('vihaan-bugbashers.onrender.com', '/v1/user/login');
+
+    final Map<String, dynamic> requestBody = {
+      'email': '${email}',
+      'password': '${password}',
+    };
+    // print('qrResult${name}');
+
+    try {
+      final response = await http.post(
+        url,
+        headers: <String, String>{
+          'Content-Type': 'application/json',
+          // 'Authorization': '${PreferencesManager().token}'
+        },
+        body: jsonEncode(requestBody),
+      );
+
+      print(response.statusCode);
+      if (response.statusCode == 200) {
+        print('Response body: ${response.body}');
+        dynamic setCookieHeader = response.headers['set-cookie'];
+
+        List<String>? cookies;
+        // print(response.Cookies);
+        print('Response headers: ${response.headers}');
+        print('Cookies from response: ${response.headers['set-cookie']}');
+
+        if (setCookieHeader is String) {
+          cookies = [setCookieHeader];
+        } else if (setCookieHeader is List<String>) {
+          cookies = setCookieHeader;
+        } else {
+          cookies = [];
+        }
+
+        print('Response Headers: $setCookieHeader');
+
+        String accessToken = '';
+        // String
+
+        if (cookies.isNotEmpty) {
+          accessToken = cookies
+              .map((cookie) => cookie.split(';').first)
+              .firstWhere((value) => value.startsWith('accessToken='),
+                  orElse: () => '');
+        }
+        String actualAccessToken = accessToken.substring("accesstoken=".length);
+
+        print('Access Token from Cookie: $actualAccessToken');
+        PreferencesManager().token = actualAccessToken;
+
+        if (actualAccessToken.isNotEmpty) {
+          // prefs.setString('token', actualAccessToken);
+          print('Token stored in prefs: $actualAccessToken');
+        } else {
+          // Handle the case where the token is empty
+          print('Token is empty');
+        }
+        final Map<String, dynamic> responseData = json.decode(response.body);
+        final message = responseData['message'];
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Successfully : $message'),
+            duration: const Duration(seconds: 3),
+          ),
+        );
+
+        setState(() {
+          _isLoading = false;
+        });
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (_) => Homescreen()));
+      } else {
+        final Map<String, dynamic> responseData = json.decode(response.body);
+        final message = responseData['message'];
+        print('Failed: $message');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.red.shade400,
+            content: Text(message),
+            duration: const Duration(seconds: 3),
+          ),
+        );
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      print('Error: $e');
+      setState(() {
+        _isLoading = false;
+      });
+    }
+    // if (isChecked) {
+    //   final prefs = await SharedPreferences.getInstance();
+    //   prefs.setString('username', _usernameController.text);
+    //   prefs.setString('password', _passController.text);
+    // }
+  }
+
+  //using this function you can use the credentials of the user
+  // void getCurrentUser() async {
+  //   try {
+  //     final user = await _auth.currentUser;
+  //     if (user != null) {
+  //       loggedinUser = user;
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +158,7 @@ class _LoginScreenState extends State<LoginScreens> {
             child: Column(
               children: <Widget>[
                 Image(
-                  image: AssetImage('assest/caress.jpeg'),
+                  image: AssetImage('assets/Screenshot 2024-04-12 130059.png'),
                   height: height / 4,
                   width: 0.75 * width,
                 ),
@@ -68,15 +189,16 @@ class _LoginScreenState extends State<LoginScreens> {
                     cursorColor: color,
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.grey[100],
+                      fillColor: Color.fromARGB(255, 255, 255, 255),
                       prefixIcon: Icon(Icons.perm_identity, color: color),
                       hintText: 'Enter your Email',
                       enabledBorder: OutlineInputBorder(
+                        
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(color: color)),
+                          borderSide: BorderSide(color: Colors.green)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(width: 2, color: color)),
+                          borderSide: BorderSide(width: 2, color: Colors.red)),
                     ),
                   ),
                 ),
@@ -99,10 +221,10 @@ class _LoginScreenState extends State<LoginScreens> {
                       hintText: 'Enter your Password',
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(color: color)),
+                          borderSide: BorderSide(color: Colors.green)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          borderSide: BorderSide(width: 2, color: color)),
+                          borderSide: BorderSide(width: 2, color: Colors.red)),
                     ),
                   ),
                 ),
@@ -154,10 +276,11 @@ class _LoginScreenState extends State<LoginScreens> {
                         //   }
                         // },
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => WelcomeScreen()));
+                          _loginApi();
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => WelcomeScreen()));
                         },
                         child: Text(
                           'Login',

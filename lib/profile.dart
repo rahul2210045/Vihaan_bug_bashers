@@ -249,7 +249,7 @@ class TextsField extends StatelessWidget {
                     readOnly: !editingEnabled,
                     controller: controller,
                     onChanged: (value) {},
-                    cursorColor: Colors.redAccent.withOpacity(0.8),
+                    cursorColor: Color.fromARGB(255, 195, 255, 155).withOpacity(0.8),
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,

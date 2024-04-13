@@ -61,9 +61,9 @@ class Article extends StatelessWidget {
             Container(
                 padding: EdgeInsets.all(25.00),
                 decoration: BoxDecoration(
-                    color: Colors.grey[200],
+                    color: Color.fromARGB(255, 167, 253, 183),
                     borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(color: Colors.black)),
+                    border: Border.all(color: Color.fromARGB(255, 225, 255, 204))),
                 child: Text(
                   description,
                   style: TextStyle(color: Colors.black, fontSize: 15),

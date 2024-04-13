@@ -42,6 +42,8 @@ dependencies:
   # google_fonts: ^6.2.1
   intro_slider: ^4.2.1
   shared_preferences: ^2.2.3
+ 
+  http: '>=0.13.6 <2.0.0'
   percent_indicator: ^4.2.3
   # health: ^10.2.0
   # flutter_local_notifications: ^17.0.0
@@ -49,6 +51,11 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   google_gemini: ^0.1.2
   image_picker: ^1.0.8
+  flutter_local_notifications: ^17.0.0
+  # usage_stats: ^1.2.0
+  # flutter_phone_direct_caller: ^2.1.1
+  # flutter_local_notifications: ^17.0.0
+  # health: ^10.2.0
   # usage_stats: ^1.2.0
 
 dev_dependencies:
@@ -108,6 +115,8 @@ flutter:
     - assets/
     - assest/Group (1).png
     - assest/image_7-removebg-preview.png
+    - assest/robo.gif
+    - assest/Girl waiting.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

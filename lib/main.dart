@@ -2,14 +2,17 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vihaan_hack/login.dart';
 import 'package:vihaan_hack/screens/age.dart';
 import 'package:vihaan_hack/screens/blinkscreen.dart';
 import 'package:vihaan_hack/screens/book_now.dart';
 import 'package:vihaan_hack/screens/chatbot.dart';
 import 'package:vihaan_hack/screens/congratulation.dart';
 import 'package:vihaan_hack/screens/gender.dart';
+import 'package:vihaan_hack/screens/prediction.dart';
 import 'package:vihaan_hack/screens/profile.dart';
 import 'package:vihaan_hack/screens/splashScreen.dart';
+import 'package:vihaan_hack/welcomescreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +42,10 @@ class MyApp extends StatelessWidget {
         'age': (context) => Age(),
         'Profile': (context) => profile1(),
         'chatbot': (context) => MentalHealthChatBot(),
+        'Welcome': (context) => WelcomeScreen(),
+        'login': (context) => LoginScreens(),
+        'predic': (context) => Prediction(),
+        // 'userscreen': (context) => UserData(),
       },
     );
   }

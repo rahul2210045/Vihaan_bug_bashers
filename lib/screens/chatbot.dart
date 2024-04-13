@@ -37,8 +37,11 @@ class _MentalHealthChatBotState extends State<MentalHealthChatBot> {
         initialIndex: 0,
         length: 2,
         child: Scaffold(
+          backgroundColor: Color.fromRGBO(107, 206, 142, 1),
             appBar: AppBar(
+              backgroundColor: Color.fromRGBO(107, 206, 142, 1),
               title: Container(
+                
                 child: Row(
                   children: [
                     // Container(
@@ -52,14 +55,19 @@ class _MentalHealthChatBotState extends State<MentalHealthChatBot> {
                         child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'MitrSerenity',
-                          style: TextStyle(
-                            color: Color(0xFF00184A),
-                            fontSize: 24,
-                            fontFamily: 'Noto Sans',
-                            fontWeight: FontWeight.w700,
-                          ),
+                        Row(
+                          children: [
+                            Image.asset('assest/Girl waiting.png',scale: 2,),
+                            Text(
+                              'MitrSerenity',
+                              style: TextStyle(
+                                color: Color(0xFF00184A),
+                                fontSize: 24,
+                                fontFamily: 'Noto Sans',
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
                         ),
                         Text(
                           'Online',
@@ -130,8 +138,7 @@ class _TextOnlyState extends State<TextOnly> {
         // .generateFromText(
         .generateFromText('''
             
-          "hi lets play a roleplay you are the chatbot of my finanacial mobile application   and will answer questions only related to bankinng and financial issues and nothing else to avoid any kind of spam .if anyone asks any other question just reply  "only ask question related to banking & finance"
-
+hi lets play a roleplay you are the chatbot of my MitrSerenity mobile application which helps to improves the mental health & fitness   and will answer questions only related to mental & fitnessl issues and nothing else to avoid any kind of spam .if anyone asks any other question just reply  "only ask question related to Health & Fitness"
 , $query''')
 
         // "u will be very specific and personalized according to the  kind of cybercrime fraud happend with the user and will not be answering any else question related to any othher category , strictly u will answer in the speciific lang in which user will ask not any other question will be entertain by u$query")
