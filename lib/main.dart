@@ -1,13 +1,19 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+// import 'package:health/health.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vihaan_hack/Homescreen.dart';
+import 'package:vihaan_hack/constants/callInfo.dart';
 import 'package:vihaan_hack/login.dart';
+import 'package:vihaan_hack/mainPage.dart';
 import 'package:vihaan_hack/profile.dart';
 import 'package:vihaan_hack/screens/age.dart';
 import 'package:vihaan_hack/screens/book_now.dart';
+import 'package:vihaan_hack/screens/callPage.dart';
 import 'package:vihaan_hack/screens/congratulation.dart';
 import 'package:vihaan_hack/screens/gender.dart';
+import 'package:vihaan_hack/screens/homecall.dart';
 import 'package:vihaan_hack/screens/prediction.dart';
 import 'package:vihaan_hack/screens/profile.dart';
 import 'package:vihaan_hack/screens/splashScreen.dart';
@@ -30,7 +36,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'predic',
+      initialRoute: 'splashscreen',
 
       // initialRoute: 'subject_wise_attendance',
       routes: {
@@ -42,7 +48,9 @@ class MyApp extends StatelessWidget {
         'Profile': (context) => profile1(),
         'Welcome': (context) => WelcomeScreen(),
         'login': (context) => LoginScreens(),
-        'predic': (context) => Prediction(),
+        'home': (context) => Homescreen(),
+        // 'home1': (context) => callHome(),
+        // 'call': (context) => CallPage(callID: '${ClassInfo.appId}'),
       },
     );
   }
