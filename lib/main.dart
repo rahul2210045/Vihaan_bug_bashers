@@ -8,6 +8,8 @@ import 'package:vihaan_hack/screens/blinkscreen.dart';
 import 'package:vihaan_hack/screens/book_now.dart';
 import 'package:vihaan_hack/screens/chatbot.dart';
 import 'package:vihaan_hack/screens/congratulation.dart';
+import 'package:vihaan_hack/screens/consellinghomeside.dart';
+import 'package:vihaan_hack/screens/consellingnavbar.dart';
 import 'package:vihaan_hack/screens/gender.dart';
 import 'package:vihaan_hack/screens/language.dart';
 import 'package:vihaan_hack/screens/prediction.dart';
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'language',
+      initialRoute: 'consellingnavbar',
       // initialRoute: 'subject_wise_attendance',
       routes: {
         'splashscreen': (context) => SplashScreen(),
@@ -47,6 +49,10 @@ class MyApp extends StatelessWidget {
         'login': (context) => LoginScreens(),
         'predic': (context) => Prediction(),
          'language': (context) => Language(),
+                  'consellinghomeside': (context) => ConsellingHomescreen(),
+                                    'consellingnavbar': (context) => consellingnavbar(),
+
+
         // 'userscreen': (context) => UserData(),
       },
     );
