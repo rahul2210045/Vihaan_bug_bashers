@@ -1,12 +1,15 @@
+// import 'dart:convert';
+
+// import 'package:flutter/material.dart';
+// import 'package:health/health.dart';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-// import 'package:health/health.dart';
 import 'package:http/http.dart' as http;
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:vihaan_hack/welcomescreen.dart';
 
-// import 'ProfilePage.dart';
+// // import 'ProfilePage.dart';
 
 class Prediction extends StatefulWidget {
   const Prediction({Key? key}) : super(key: key);
@@ -46,15 +49,15 @@ print("kjhgfd");
     }
   }
 
-  bool editingEnabled = true;
+//   bool editingEnabled = true;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    // temperature.text = widget.temp.toString();
-    // step_cnt.text = widget.steps.toString();
-    super.initState();
-  }
+//   @override
+//   void initState() {
+//     // TODO: implement initState
+//     temperature.text = widget.temp.toString();
+//     step_cnt.text = widget.steps.toString();
+//     super.initState();
+//   }
 
   @override
   Widget build(BuildContext context) {

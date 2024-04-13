@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vihaan_hack/Homescreen.dart';
+import 'package:vihaan_hack/screens/congratulation.dart';
 
 class BookNow extends StatefulWidget {
   const BookNow({Key? key}) : super(key: key);
@@ -49,6 +50,15 @@ class _BookNowState extends State<BookNow> {
             child: Column(
               children: [
                 SizedBox(height: sheight * 0.05),
+                const Text(
+                  "Help us find youthe right Expert!",
+                  style: TextStyle(
+                      color: Colors.brown,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: sheight * 0.05),
                 _buildDropDown(
                   selectedValue1,
                   (String? newValue) {
@@ -91,13 +101,25 @@ class _BookNowState extends State<BookNow> {
                   'Could you tell us a little more',
                   style: TextStyle(fontSize: 15, color: Colors.brown),
                 ),
+                SizedBox(height: sheight * 0.15),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 132, 233, 136)),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                          const Color.fromARGB(255, 132, 233, 136)),
                   onPressed: () {
-                    _showConfirmationDialog(context);
+                    // _showConfirmationDialog(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => congt(),
+                      ),
+                    );
                   },
-                  child: Text('Book Appointment',style: TextStyle(color: Colors.black),),
+                  child: Text(
+                    'Book Appointment',
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               ],
             ),
@@ -149,7 +171,8 @@ class _BookNowState extends State<BookNow> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> Homescreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Homescreen()));
               },
               child: Text("OK"),
             ),

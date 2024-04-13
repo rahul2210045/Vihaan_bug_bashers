@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+// import 'package:health/health.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vihaan_hack/login.dart';
 import 'package:vihaan_hack/screens/age.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'consellingnavbar',
+      initialRoute: 'blinkscreen',
       // initialRoute: 'subject_wise_attendance',
       routes: {
         'splashscreen': (context) => SplashScreen(),

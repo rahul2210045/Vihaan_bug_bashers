@@ -34,7 +34,11 @@ class _Homescreen1State extends State<Homescreen1> {
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(237, 254, 231, 1),
         title: Row(
-          children: [CircleAvatar(backgroundColor: Colors.blueAccent,backgroundImage: AssetImage('assest/Ellipse 2.png'),),Spacer(),Icon(Icons.notifications)],
+          children: [CircleAvatar(backgroundColor: Colors.blueAccent,backgroundImage: AssetImage('assest/Ellipse 2.png'),),
+          SizedBox(width: 2,),
+          Text('MitrSerenity'),
+          Image.asset('assest/image_7-removebg-preview.png',scale: 10,)
+          ,Spacer(),Icon(Icons.notifications)],
         ),
       ),
       // floatingActionButton: Padding(
@@ -69,7 +73,11 @@ class _Homescreen1State extends State<Homescreen1> {
                   child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                          Image.asset('assest/Happy.png'),
+                          InkWell(child: Image.asset('assest/Happy.png'),onTap: (){
+                                              _showHappyFaceDialog(context);
+
+                            //  Navigator.push(context, MaterialPageRoute(builder: (context)=> BookNow()));
+                          },),
                            Image.asset('assest/Focus.png'),
                              Image.asset('assest/Calm.png'),
                                Image.asset('assest/Relax.png'),
@@ -145,6 +153,27 @@ Container(child: Image.asset('assest/Group 81@2x.png'),),
 //   @override
 //   String toString() => 'FloatingActionButtonLocation.custom';
 // }
+
+
+void _showHappyFaceDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Let's explore more about you!"),
+          content: Text("This is a dialog to explore more about you."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
+  }
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
 
